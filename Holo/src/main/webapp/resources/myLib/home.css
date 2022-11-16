@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body,
+footer {
+    background-color: #d7e8ff;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.contents {
+    background-color: white;
+    width: 900px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ====================================================================================== */
+.header {
+    width: 900px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    background: url("/image/logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+.search {
+    padding-top: 80px;
+}
+
+.searchBox {
+    border-radius: 5px;
+    border: 5px solid grey;
+    height: 40px;
+}
+
+.searchClick {
+    height: 40px;
+    width: 50px;
+    background-color: #595959;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.searchClick:hover {
+    background-color: black;
+}
+
+
+
+/* ============================================================== */
+.main {
+    width: 900px;
+    margin: 10px 0;
+    height: 150px;
+}
+
+
+.headerM {
+    height: 50px;
+}
+
+.category {
+    line-height: 50px;
+}
+
+.category>* {
+    background-color: #595959;
+    float: left;
+    width: 148px;
+    text-align: center;
+}
+
+.category>*:not(:last-child) {
+    border-right: 2px solid grey;
+}
+
+.liText {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: bold;
+}
+
+.category>*:hover {
+    background-color: black;
+}
+
+
+
+/* ================================================================== */
+
+
+.banner {
+    float: left;
+    height: 150px;
+    width: 600px;
+}
+
+.banner>a {
+    display: block;
+    height: 100%;
+    background: url("/image/2918041.jpg") no-repeat center/cover;
+}
+
+
+.login {
+    float: left;
+    text-align: center;
+    line-height: 150px;
+    width: 290px;
+    height: 150px;
+}
+
+.boards {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+
+}
+
+.boards>* {
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+}
+
+h4>a {
+    float: right;
+}
+
+hr {
+    background-image: linear-gradient(to right, skyblue 30%, lightgray 30%);
+    height: 3px;
+    border: 0px;
+}
+
+/* =============================================================================================== */
+
+.bottom {
+    font-size: .8rem;
+    color: brown;
+}
+
+.bottom li>a {
+    color: gray;
+    font-size: .9rem;
+}
+
+.bottom a {
+    color: #388aff;
+}
+
+.btMenu>* {
+    height: 30px;
+    margin-right: 20px;
+    display: inline-block;
+}

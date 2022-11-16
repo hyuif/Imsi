@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.selected{text-decoration:line-through;font-weight:700;color:red}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+footer {
+    background-color: #cfcfcf;
+    margin: auto;
+}
+
+.contents {
+    background-color: white;
+    width: 900px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+hr {
+    opacity: .3;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ========================================================================================= */
+
+.header {
+    width: 900px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    background: url("../images/logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+.search {
+    padding-top: 80px;
+}
+
+.searchBox {
+    border-radius: 5px;
+    border: 5px solid grey;
+    height: 40px;
+}
+
+.searchClick {
+    height: 40px;
+    width: 50px;
+    background-color: #595959;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.searchClick:hover {
+    background-color: black;
+}
+
+
+
+/* ============================================================== */
+
+.main {
+    width: 900px;
+    margin: 10px 0;
+    height: 150px;
+}
+
+
+.headerM {
+    height: 50px;
+}
+
+.category {
+    line-height: 50px;
+}
+
+.category>* {
+    background-color: #595959;
+    float: left;
+    width: 148px;
+    text-align: center;
+}
+
+.category>*:not(:last-child) {
+    border-right: 2px solid grey;
+}
+
+.liText {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: bold;
+}
+
+.category>*:hover {
+    background-color: black;
+}
+
+/* ================================================================= */
+table{
+	border-collapse:collapse;
+}
+
+tr {
+    border-bottom: 1px solid rgb(103, 97, 97,.1); 
+    
+}
+
+.ct{
+	text-align: center;
+}
+
+
+/* ======================================================================= */
+.bottom {
+    font-size: .8rem;
+    color: brown;
+}
+
+.bottom li>a {
+    color: gray;
+    font-size: .9rem;
+}
+
+.bottom a {
+    color: #388aff;
+}
+
+.btMenu>* {
+    height: 30px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+
+/* ======================================================================= */
+.notice{
+	color: #ff4e59;
+	border: 1px solid #ffc6c9;
+    background-color: #ffe3e4;
+    font-weight: 800;
+    line-height: 19px;
+    text-align: center;
+    
+}
+
+
