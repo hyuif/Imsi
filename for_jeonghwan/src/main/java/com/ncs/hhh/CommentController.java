@@ -65,6 +65,7 @@ public class CommentController {
 		
 		System.out.println("offset => "+offset);
 		System.out.println("limit => "+limit);
+		System.out.println("com_bno => "+com_bno);
 		
 		
 		System.out.println("댓글 목록 컨트롤러 동작");
