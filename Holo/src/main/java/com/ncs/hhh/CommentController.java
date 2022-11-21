@@ -34,8 +34,6 @@ import vo.Tip_BoardVO;
 
 
 
-// 커밋 테스트용 쟏후갸ㅐ둫갇흐ㅏㄱㄷ흐ㅐㄱㅎㄱㄷㅎㄷㅎㄱㄴㄱㄷㅎㄷㄱㅎㅎㄱㄷㅎㅎㄱㄷ
-
 
 @RestController
 @RequestMapping("/Comment")

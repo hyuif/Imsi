@@ -9,6 +9,9 @@
 	<title>** Board Detail Spring_MVC2 **</title>
 	<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script>
+	let offset = 0;
+	const limit = 10;
+	
 	$(document).on("click", "#Comment_regist", function() {
 		
 		const com_bno = ${apple.seq};
@@ -33,7 +36,9 @@
 				{
 					"com_bno":com_bno,
 					"com_writer":com_writer,
-					"com_content":com_content
+					"com_content":com_content,
+					"offset":offset,
+		      "limit":limit
 				}		
 			),
 			contentType: 'application/json',
@@ -60,48 +65,49 @@
 getList();
 
 function getList() {
-	
-	const com_bno = ${apple.seq};
-	console.log(${apple.seq});
-	const com_writer = $('#com_writer').val();
-		const com_content = $('#com_content').val();
-		/* const com_no = ${com}; */
-	$.getJSON(
-		"<c:url value='/Comment/CommentList/'/>"+com_bno,
-		function(data) {
-			if(data.total > 0){
-				var list = data.list;
-				
-				var comment_html = "<div>";
-				
-				$('#count').html(data.total);
-				for(i = 0;i < list.length;i++){
-					var content = list[i].com_content;
-					var writer = list[i].com_writer;
-					comment_html += "<div><span id='com_writer'><strong>" + writer + "</strong></span><br/>";
-					comment_html += "<span id='com-content'>" + content + "</span><br>";
-					if(writer === $("#com_writer").val()){
-						 comment_html += "<span id='delete' style='cursor:pointer;' data-id ="+content+">[삭제]</span><br></div><hr>";
-						 
-					}
-					else{
-						comment_html += "</div><hr>";
-					}
-				}
-				
-				$(".comment_Box").html(comment_html);
-				
-				
-			}
-			else{
-				var comment_html = "<div>등록된 댓글이 없습니다.</div>";
-				$(".comment_Box").html(comment_html);
-			}
-	
-		
-		}
-		);//getJson
-}
+	   
+	   const com_bno = ${apple.seq};
+	   console.log(${apple.seq});
+	   const com_writer = $('#com_writer').val();
+	      const com_content = $('#com_content').val();
+	      /* const com_no = ${com}; */
+	   $.getJSON(
+	      "<c:url value='/Comment/CommentList/'/>"+com_bno+"?offset="+offset+"&limit="+limit,
+	      function(data) {
+	         if(data.total > 0){
+	            var list = data.list;
+	            
+	            var comment_html = "<div>";
+	            
+	            $('#count').html(data.total);
+	            for(i = 0;i < list.length;i++){
+	               var content = list[i].com_content;
+	               var writer = list[i].com_writer;
+	               comment_html += "<div><span id='com_writer'><strong>" + writer + "</strong></span><br/>";
+	               comment_html += "<span id='com-content'>" + content + "</span><br>";
+	               if(writer === $("#com_writer").val()){
+	                   comment_html += "<span id='delete' style='cursor:pointer;' data-id ="+content+">[삭제]</span><br></div><hr>";
+	                   
+	               }
+	               else{
+	                  comment_html += "</div><hr>";
+	               }
+	            }
+	            
+	            $(".comment_Box").html(comment_html);
+	            
+	            
+	         }
+	         else{
+	            var comment_html = "<div>등록된 댓글이 없습니다.</div>";
+	            $(".comment_Box").html(comment_html);
+	         }
+	   
+	      
+	      }
+	      );//getJson
+	}
+
 	</script>
 	
 	

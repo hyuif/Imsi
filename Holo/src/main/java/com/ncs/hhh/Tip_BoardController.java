@@ -31,7 +31,7 @@ public class Tip_BoardController {
 	CommentService service2;
 	
 	
-	// ** Reply_Insert : 답글등록
+	// ** Reply_Insert : 답글등록12312333123
 	@RequestMapping(value="/hrinsertf")
 	public ModelAndView rinsertf(HttpServletRequest request, 
 			HttpServletResponse response, ModelAndView mv, Tip_BoardVO vo) {

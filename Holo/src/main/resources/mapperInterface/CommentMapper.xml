@@ -14,7 +14,7 @@
   	</select>
   	
   	<select id="getList" resultType="vo.CommentVO">
-  		select * from comment where com_bno = #{com_bno}
+  		select * from comment where com_bno = #{com_bno} ORDERS LIMIT 10
   	</select>
   	
   	<select id="myRecord" resultType="vo.CommentVO">
