@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+	
+table{
+	width: 100;
+}
+
+td{
+	text-align: center;	
+	border: 1px;	
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: inline-block;
+    width: 250px;
+    height: 130px;
+    background: url("../uploadImage/Holo_logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+select{
+	width: 100px;
+	height: 30px;
+	text-align: center;
+}
+
+input{
+	width: 200px;
+	height: 26px;
+}
+
+button{
+	width: 60px;
+	height: 30px;
+}
+
+a{
+	text-decoration: none;
+	font-weight:bold;
+	color: Gray;
+	font-size:1.2em;
+}
+
+a:hover { 
+	color:DimGray; 
+}
+
+td{
+	border: 10px;
+}
+
+
+
+
+
+

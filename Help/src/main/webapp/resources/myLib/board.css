@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.selected{text-decoration:line-through;font-weight:700;color:red}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+footer {
+    background-color: #d7e8ff;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.contents {
+    background-color: white;
+    width: 900px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+hr {
+	background-image: linear-gradient(to right, skyblue 30%, lightgray 30%);
+    height: 3px;
+    border: 0px;
+    opacity: .3;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ========================================================================================= */
+
+.header {
+    width: 900px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    background: url("../uploadImage/logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+.search {
+    padding-top: 80px;
+}
+
+.searchBox {
+    border-radius: 5px;
+    border: 5px solid grey;
+    height: 40px;
+}
+
+.searchClick {
+    height: 40px;
+    width: 50px;
+    background-color: #595959;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.searchClick:hover {
+    background-color: black;
+}
+
+h2 {
+	line-height: 2em;
+	width: 100%;
+	border: 1px solid #D0D1D2 ;	
+}
+
+/* ============================================================== */
+
+.main {
+    width: 900px;
+    margin: 10px 0;
+    height: 150px;
+}
+
+.category {
+	height: 50px;
+    line-height: 50px;
+}
+
+.category>li {
+    background-color: #595959;
+    float: left;
+    width: 179.2px;
+    text-align: center;
+}
+
+.category>*:not(:last-child) {
+    border-right: 1px solid grey;
+}
+
+.liText {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: bold;
+}
+
+.category>*:hover {
+    background-color: black;
+}
+
+/*================================================================*/
+
+.banner {
+    float: left;
+    height: 150px;
+    width: 600px;
+}
+
+.banner>a {
+    display: block;
+    height: 100%;
+    background: url("/image/2918041.jpg") no-repeat center/cover;
+}
+
+
+.login {
+    float: left;
+    text-align: center;
+    line-height: 150px;
+    width: 290px;
+    height: 150px;
+}
+
+.boards {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+
+}
+
+.boards>* {
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+}
+
+h4>a {
+    float: right;
+}
+
+/* ================================================================= */
+table{
+	border-collapse:collapse;
+}
+
+tr {
+    /* border-bottom: 1px solid rgb(103, 97, 97,.1); */ 
+    
+}
+
+.ct{
+	text-align: center;
+}
+
+.board_dTop {
+	width: 100%;
+	border: 1px solid rgb(103, 97, 97,.1);
+}
+
+.board_dTitle {
+	font-size: 40px;
+	line-height: 60px;
+}
+
+.board_dList {
+	height: 40px;
+	width: 100%;
+	font-size: 1em;
+	color: grey;
+	text-align: left;
+	display: inline;
+    margin : 20px, 0;
+    border-bottom: 1px solid #d1d2d3;
+}
+
+.board_dBottom {
+	height: 700px;
+}
+
+.board_dBottom td {
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.board_dTrade {
+	color : red;
+	font-weight: bold; 
+}
+
+.boardList_head {
+	height: 40px;
+	border : 1px solid #d9dad8;
+}
+
+.boardList_body tr:nth-child(even) {
+	background-color: #d9dad8;
+}
+
+
+/* ======================================================================= */
+.bottom {
+    font-size: .8rem;
+    color: brown;
+}
+
+.bottom li>a {
+    color: gray;
+    font-size: .9rem;
+}
+
+.bottom a {
+    color: #388aff;
+}
+
+.btMenu>* {
+    height: 30px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+
+/* ======================================================================= */
+.notice{
+	color: #ff4e59;
+	border: 1px solid #ffc6c9;
+    background-color: #ffe3e4;
+    font-weight: 800;
+    line-height: 19px;
+    text-align: center;
+    
+}
+
+
