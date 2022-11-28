@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    display: inline-block;
+    width: 300px;
+    height: 150px;
+    background: url("../uploadImage/Holo_logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+body{
+	text-align: center;
+}
+
+table{
+	display: inline-block;
+	text-align: center;
+}
+
+input{
+	border: 1px solid #388aff;
+    height: 50px;
+    border-radius: 3px;
+    margin: 10px 10px 20px 0;
+    padding: 0 50px 0 0;
+}
+
+.eMessage{
+	color: Red;
+}
+
+button{
+	border: 1px solid #388aff;
+	text-align: center;
+	border: 1px solid #388aff;
+    height: 50px;
+    border-radius: 3px;
+   }
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mapperInterface.UserMapper">
+
+
+	<sql id="search">
+		<if test="keyword!=null">
+			<bind name="keyVal" value="'%' + keyword + '%'"/>
+		</if>
+		<choose>
+			<when test="searchType=='i'.toString()">
+				and id like #{keyVal} )
+			</when>
+			<when test="searchType=='na'.toString()">
+				and name like #{keyVal} )
+			</when>
+			<when test="searchType=='in'.toString()">
+				and id like #{keyVal}
+				or name like #{keyVal} )
+			</when>
+			<otherwise> ) </otherwise>
+		</choose>
+	</sql>
+	
+	<select id="searchCount" resultType="int">
+		select count(*) from user
+		where ( id != "admin" <include refid="search"></include>
+	</select> 
+	<select id="searchList" resultType="vo.UserVO">
+		select * from user 
+		where ( id != "admin" <include refid="search"></include>
+		order by id asc
+		limit #{sno}, #{rowsPerPage}
+	</select>
+
+  	<select id="selectOne" resultType="vo.UserVO">
+  		select * from user where id = #{id} 
+  	</select>
+  	
+  	<insert id="insert">
+  		insert into user values(#{id},#{password},#{name},
+  		#{birthday},#{gender},#{phonenum},#{uploadfile} )
+  	</insert>
+	
+	<update id="update">
+		update user set  name=#{name}, birthday=#{birthday}, 
+		gender=#{gender}, phonenum=#{phonenum}, uploadfile=#{uploadfile}  where id=#{id}
+	</update>
+	
+	<update id="pwupdate">
+		update user set password=#{password} where id=#{id}
+	</update>
+	
+  	<delete id="delete">
+  		delete from user where id = #{id}
+  	</delete> 
+  	
+  	
+  </mapper>
+

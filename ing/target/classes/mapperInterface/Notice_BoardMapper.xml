@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapperInterface.Notice_BoardMapper">
+
+
+	<sql id="search">
+		<if test="keyword!=null">
+			<bind name="keyVal" value="'%'+keyword+'%'" />
+		</if>
+		<choose>
+			<when test="searchType=='t'.toString()">
+				and title like #{keyVal} )
+			</when>
+			<when test="searchType=='c'.toString()">
+				and content like #{keyVal} )
+			</when>
+			<when test="searchType=='tc'.toString()">
+				and title like #{keyVal}
+				or content like #{keyVal} )
+			</when>
+			<otherwise> )</otherwise>
+		</choose>
+	</sql>
+
+	<select id="searchList" resultType="vo.Notice_BoardVO">
+	
+		select seq, n.id, title, content, 
+		substr(regdate,1,10) regdate, cnt, fix, u.uploadfile image
+		from notice_board n join user u
+		where n.id = u.id AND ( seq>0
+		<include refid="search"></include>
+		order by fix desc, seq desc
+		limit #{sno}, #{rowsPerPage}
+	</select>
+
+	<select id="searchCount" resultType="int">
+		select count(*) from notice_board
+		where ( seq>0
+		<include refid="search"></include>
+	</select>
+
+
+	<!-- ** 원글 입력 -->
+	<insert id="insert">
+		<selectKey keyProperty="seq" resultType="int" order="BEFORE">
+			select IFNULL(max(seq),0)+1 from notice_board
+		</selectKey>
+		insert into notice_board(seq,id,title,content,uploadfile,fix)
+		values(#{seq},#{id},#{title},#{content},#{uploadfile},#{fix})
+	</insert>
+
+	<select id="selectOne" resultType="vo.Notice_BoardVO">
+		select * from notice_board where seq=#{seq}
+	</select>
+
+	<!-- ** 조회수 증가 -->
+	<update id="countUp">
+		update notice_board set cnt=cnt+1 where seq=#{seq}
+	</update>
+
+	<update id="update">
+		update notice_board set title=#{title}, content=#{content},
+		uploadfile=#{uploadfile}, fix=#{fix} where seq=#{seq}
+	</update>
+
+	<delete id="delete">
+		delete from notice_board where seq=#{seq}
+	</delete>
+
+
+	<select id="selectNList" resultType="vo.Notice_BoardVO">
+		select seq, id, title,DATE_FORMAT(regdate, '%m-%d %H:%i') regdate from
+		Notice_board order by seq desc limit 0,5
+	</select>
+
+
+	<sql id="search2">
+				and title like #{keyword2} )
+	</sql>
+
+	<select id="nsearchsearch" resultType="vo.Notice_BoardVO">
+		select seq, n.id, title,DATE_FORMAT(regdate, '%m-%d %H:%i') regdate, cnt, u.uploadfile image
+		from notice_board n join user u
+		where n.id = u.id AND ( seq > 0 and title like  CONCAT('%', #{keyword2}, '%')    )
+		UNION ALL
+		select seq, t.id, title,DATE_FORMAT(regdate, '%m-%d %H:%i') regdate, cnt, u.uploadfile image
+		from tip_board t join user u
+		where t.id = u.id AND ( seq > 0 and title like  CONCAT('%', #{keyword2}, '%')    )
+		UNION ALL
+		select seq, c.id, title,DATE_FORMAT(regdate, '%m-%d %H:%i') regdate, cnt, u.uploadfile image
+		from club_board c join user u
+		where c.id = u.id AND ( seq > 0 and title like  CONCAT('%', #{keyword2}, '%')    )
+		UNION ALL
+		select seq, f.id, title,DATE_FORMAT(regdate, '%m-%d %H:%i') regdate, cnt, u.uploadfile image
+		from free_board f join user u
+		where f.id = u.id AND ( seq > 0 and title like  CONCAT('%', #{keyword2}, '%')    )
+		UNION ALL
+		select seq, tr.id, title,DATE_FORMAT(regdate, '%m-%d %H:%i') regdate, cnt, u.uploadfile image
+		from trade_board tr join user u
+		where tr.id = u.id AND ( seq > 0 and title like  CONCAT('%', #{keyword2}, '%')    )
+		order by regdate desc
+		limit #{sno}, #{rowsPerPage}
+	</select>
+
+	<select id="nsearchCount" resultType="int">
+		select count(*) from notice_board
+		where ( seq>0 and title like CONCAT('%', #{keyword2}, '%') )
+		
+	</select>
+</mapper>  
