@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	text-align: center;
+}
+
+form{
+	display: inline-block;
+	text-align: center;
+}
+.logo {
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    background: url("../uploadImage/logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+a{
+	text-decoration: none;
+	font-weight:bold;
+}
+
+tr{
+	height: 40px;
+}
+
+.page{
+	background-color: lavender;
+	border: 0px;
+	border-radius: 4px; 
+}
+
+th, td:not(.no){
+	text-align: center;
+	border: 1px solid lavender;
+	border-radius: 4px; 
+}
+
+.no{
+	width: 100px;
+}
+
+.no input{
+	height: 30px;
+    width: 30px;
+    background-color: #595959;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.eMessage{
+	color: red;
+}

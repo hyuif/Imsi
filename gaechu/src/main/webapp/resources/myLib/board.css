@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.selected{text-decoration:line-through;font-weight:700;color:red}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+footer {
+    background-color: #d7e8ff;
+    margin: auto;
+}
+
+.contents {
+    background-color: white;
+    width: 900px;
+    padding: 0 20px;
+    margin: auto;
+    position: relative;
+}
+
+hr {
+	background-image: linear-gradient(to right, skyblue 30%, lightgray 30%);
+    height: 3px;
+    border: 0px;
+    opacity: .3;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ========================================================================================= */
+
+.header {
+    width: 900px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    background: url("../uploadImage/logo.png") center/cover;
+    text-indent: -9999px;
+}
+
+.search {
+    padding-top: 80px;
+}
+
+.searchBox {
+    border-radius: 5px;
+    border: 5px solid grey;
+    height: 40px;
+}
+
+.searchClick {
+    height: 40px;
+    width: 50px;
+    background-color: #595959;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.searchClick:hover {
+    background-color: black;
+}
+
+.Header_box {
+	width: 100%;
+	border: 1px solid #D0D1D2 ;	
+}
+
+.Header_text1,
+.Header_text2 {
+	font-size: 0.8em;
+	color: #868e96;
+}
+
+.Header_text2 a {
+	color: blue;
+	text-decoration: none;
+}
+
+h2 {
+	line-height: 2em;
+}
+
+/* ============================================================== */
+
+.main {
+    width: 900px;
+    margin: 10px 0;
+    height: 150px;
+}
+
+.category {
+	height: 50px;
+    line-height: 50px;
+}
+
+.category>li {
+    background-color: #595959;
+    float: left;
+    width: 179.2px;
+    text-align: center;
+}
+
+.category>*:not(:last-child) {
+    border-right: 1px solid grey;
+}
+
+.liText {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: bold;
+}
+
+.category>*:hover {
+    background-color: black;
+}
+
+/*================================================================*/
+
+.banner {
+    float: left;
+    height: 150px;
+    width: 600px;
+}
+
+.banner>a {
+    display: block;
+    height: 100%;
+    background: url("/image/2918041.jpg") no-repeat center/cover;
+}
+
+
+.login {
+    float: left;
+    text-align: center;
+    line-height: 150px;
+    width: 290px;
+    height: 150px;
+}
+
+.boards {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+
+}
+
+.boards>* {
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+}
+
+h4>a {
+    float: right;
+}
+
+/* ================================================================= */
+table{
+	border-collapse:collapse;
+}
+
+tr {
+    /* border-bottom: 1px solid rgb(103, 97, 97,.1); */ 
+    
+}
+
+#board_container{
+	width: 100%;
+}
+
+.board_dTop {
+	width: 100%;
+	border: 1px solid rgb(103, 97, 97,.1);
+}
+
+.board_dTitle {
+	font-size: 20px;
+	height: 60px;
+	display: inline;
+}
+
+.board_dSB {
+	font-size: 15px;
+	color: red;
+	vertical-align: bottom; 
+}
+
+.board_dList {
+	height: 40px;
+	width: 100%;
+	font-size: 1em;
+	color: grey;
+	text-align: left;
+	display: block;
+    border-bottom: 1px solid #d1d2d3;
+}
+
+.board_dBottom {
+	height: 700px;
+}
+
+.board_dBottom td {
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.board_dTrade {
+	color : red;
+	font-weight: bold; 
+}
+
+.boardList_head {
+	height: 35px;
+	border-top : 1px solid #d9dad8;
+	border-bottom : 1px solid #d9dad8;
+	font-size: 0.8em;
+}
+
+.headS {
+	width:10%;
+	text-align: center;
+}
+
+.headG {
+	width:10%;
+	text-align: center;
+}
+
+.headT {
+	width:65%;
+}
+
+.headI {
+	width:10%;
+}
+
+.headR {
+	width:10%;
+	text-align: center;
+}
+
+.headC {
+	width:5%;
+	text-align: center;
+}
+
+.boardList_body tr:nth-child(odd):not(.notice_bg) {
+	background-color: #f1f3f5;
+}
+
+.boardList_body {
+	height: 30px;
+	text-decoration: none;
+}
+
+.bodyS {
+	width:10%;
+	text-align: center;
+}
+
+.bodyT {
+	width:65%;
+}
+
+.bodyI {
+	width:10%;
+}
+
+.bodyR {
+	width:10%;
+	text-align: center;
+}
+
+.bodyC {
+	width:5%;
+	text-align: center;
+}
+
+#searchBar {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+.new_Write {
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+	background-color: #dee2e6;
+	border-radius: 4px;
+	width: 90px;
+	line-height: 30px;
+	text-decoration: none;
+}
+
+.new_Write p {
+	cursor: pointer;
+}
+
+.new_Write a,
+.new_Write p {
+	position: relative;
+	display: inline;
+}
+
+/* ======================================================================= */
+.bottom {
+    font-size: .8rem;
+    color: brown;
+}
+
+.bottom li>a {
+    color: gray;
+    font-size: .9rem;
+}
+
+.bottom a {
+    color: #388aff;
+}
+
+.btMenu>* {
+    height: 30px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+
+/* ======================================================================= */
+.notice{
+	color: #ff4e59;
+	border: 1px solid #ffc6c9;
+    background-color: #ffe3e4;
+    font-weight: 800;
+    line-height: 19px;
+    text-align: center;
+    width:10%;
+}
+
+.notice_bg{
+	background-color: lightBlue;
+}
+
+/* ======================================================================= */
+
+.put{
+	border: 1px solid #595959;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.user{
+	height: 30px;
+    width: 50px;
+    background-color: #595959;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+/* ======================================================================= */
+
+.insert_container {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: block;
+	float: none;
+}
+
+.insert_table {
+	width: 100%;
+}
+
+.test101 {
+	height: 24px;
+	border-radius: 3px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.test1000 {
+	border: 0;
+	background-color: #f6f5f5;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.seqHidden {
+	display: none;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapperInterface.Board_likeMapper">
+
+  <select id="countbyLike" resultType="int">
+   SELECT COUNT(*)
+   FROM board_like
+   WHERE b_no = #{b_no} and b_type = #{b_type};
+  </select>
+  
+  <select id="likeuser" resultType="String">
+   SELECT u_id
+   FROM board_like
+   WHERE b_no = #{b_no} and b_type = #{b_type};
+  </select>
+
+  <insert id="create">
+    INSERT INTO board_like(like_no, b_no, u_id, b_type, like_check) 
+    VALUES (1,#{b_no},#{u_id},#{b_type},0)
+  </insert>
+    
+  <update id="like_check">
+    UPDATE board_like
+    SET like_check = like_check + 1 
+    WHERE u_id=#{u_id} AND b_no=#{b_no} and b_type=#{b_type}
+  </update>
+  
+  <update id="like_check_cancel">
+    UPDATE board_like
+    SET like_check = 0
+    WHERE u_id=#{u_id} AND b_no=#{b_no} b_type=#{b_type}
+  </update>
+
+</mapper>  
